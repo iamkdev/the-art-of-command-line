@@ -1,5 +1,5 @@
-[ Languages: [English](README.md), [Español](README-es.md), [한국어](README-ko.md), [Português](README-pt.md), [Русский](README-ru.md), [Slovenščina](README-sl.md), [中文](README-zh.md) ]
-
+🌍
+*[Čeština](README-cs.md) ∙ [Deutsch](README-de.md) ∙ [Ελληνικά](README-el.md) ∙ [English](README.md) ∙ [Español](README-es.md) ∙ [Français](README-fr.md) ∙ [Indonesia](README-id.md) ∙ [Italiano](README-it.md) ∙ [日本語](README-ja.md) ∙ [한국어](README-ko.md) ∙ [polski](README-pl.md) ∙ [Português](README-pt.md) ∙ [Română](README-ro.md) ∙ [Русский](README-ru.md) ∙ [Slovenščina](README-sl.md) ∙ [Українська](README-uk.md) ∙ [简体中文](README-zh.md) ∙ [繁體中文](README-zh-Hant.md)*
 
 # A arte da linha de comando
 
@@ -16,35 +16,35 @@
 
 ![curl -s 'https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md' | egrep -o '`\w+`' | tr -d '`' | cowsay -W50](cowsay.png)
 
-Fluência na linha de comando é uma habilidade muitas vezes negligenciada ou considerada obsoleta, porém ela aumenta sua flexibilidade e produtividade como  *desenvolvedor* de diversas maneiras, sutis ou não. Este texto descreve uma seleção de notas e dicas de uso da linha de comando  que me parecem muito uteis, quando usando o Linux. Algumas dicas são elementares, e outras são mais específicas, sofisticadas ou obscuras. Esta página  é curta, mas se você souber usar e lembrar todos os items que estão aqui, então você está mandando bem.
+Fluência na linha de comando é uma habilidade muitas vezes negligenciada ou considerada obsoleta, porém ela aumenta sua flexibilidade e produtividade como *desenvolvedor* de diversas maneiras, sutis ou não. Este texto descreve uma seleção de notas e dicas de uso da linha de comando que me parecem muito uteis, quando usando o Linux. Algumas dicas são elementares, e outras são mais específicas, sofisticadas ou obscuras. Esta página é curta, mas se você souber usar e lembrar todos os items que estão aqui, então você está mandando bem.
 
 Muito do que está aqui [originalmente](http://www.quora.com/What-are-some-lesser-known-but-useful-Unix-commands)
 [apareceu](http://www.quora.com/What-are-the-most-useful-Swiss-army-knife-one-liners-on-Unix)
 no [Quora](http://www.quora.com/What-are-some-time-saving-tips-that-every-Linux-user-should-know),
-mas dado o interesse por lá,  me pareceu importante usar o Github, onde pessoas mais talentosas do que eu,  poderiam sugerir melhorias facilmente. Se você descobrir um erro ou algo que poderia ser melhorado, por favor abra um issue ou um PR! (E claro, por favor veja as `meta sections' e PRs/issues existentes, primeiro.)
+mas dado o interesse por lá, me pareceu importante usar o Github, onde pessoas mais talentosas do que eu, poderiam sugerir melhorias facilmente. Se você descobrir um erro ou algo que poderia ser melhorado, por favor abra um issue ou um PR! (E claro, por favor veja as `meta sections' e PRs/issues existentes, primeiro.)
 
 ## Meta
 
 Escopo:
 
-- Este guia é destinado tanto aos iniciantes quanto aos usuários mais experientes. Os objetivos são *abrangencia*  (tudo que é importante), *especificidade* (dar exemplos concretos dos casos de usos mais comuns), e *brevidade* (evitar coisas que não são tão essenciais ou digressões que você pode facilmente encontrar pela internet). Todas as dicas são essenciais em alguma situação ou trazem uma economia notável de tempo em relação a outras alternativas.
+- Este guia é destinado tanto aos iniciantes quanto aos usuários mais experientes. Os objetivos são *abrangência* (tudo que é importante), *especificidade* (dar exemplos concretos dos casos de usos mais comuns), e *concisão* (evitar coisas que não são tão essenciais ou digressões que você pode facilmente encontrar pela Internet). Todas as dicas são essenciais em alguma situação ou trazem uma economia notável de tempo em relação a outras alternativas.
 - Este guia é escrito para o Linux. Muitos, mas não todos os items, se aplicam igualmente para o MacOS (ou mesmo o Cygwin).
-- O foco está na interatividade com  Bash, embora muitas dicas aqui sejam aplicáveis a outras `shells' e tambem a scripts em Bash, em geral.
-- Incluimos tanto comandos no Unix "padrão", quanto comandos que requeiram instalação de pacotes adicionais -- desde que estes sejam importantes o suficiente para merecerem sua inclusão nessa lista.
+- O foco está na interatividade com Bash, embora muitas dicas aqui sejam aplicáveis a outras `shells' e também a scripts em Bash, em geral.
+- Incluímos tanto comandos no Unix "padrão", quanto comandos que requeiram instalação de pacotes adicionais -- desde que estes sejam importantes o suficiente para merecerem sua inclusão nessa lista.
 
 Notas:
 
-- Para manter este guia em uma única página, o conteúdo implícito será incluído por referência. Você é competente o suficiente para verificar mais detalhes em outros lugares, desde que você já tenha entendido a ideia ou saiba o que procurar no Google. Use `apt-get`/`yum`/`dnf`/`pacman`/`pip`/`brew` (quando adequado) para instalar novos programas.
-- Use [Explainshell](http://explainshell.com/) para encontrar informações úteis sobre o que fazem os comandos, as opções, pipes e etc.
+- Para manter este guia em uma única página, o conteúdo implícito será incluído por referência. Você é competente o suficiente para verificar mais detalhes em outros lugares, desde que você já tenha entendido a ideia ou saiba o que procurar no Google. Use `apt-get`, `yum`, `dnf`, `pacman`, `pip` ou `brew` (quando adequado) para instalar novos programas.
+- Use [Explainshell](http://explainshell.com/) para encontrar informações úteis sobre o que fazem os comandos, as opções, pipes, etc.
 
 
 ## Básico
 
-- Aprenda o básico sobre Bash. Na verdade, digite `man bash` e pelo menos entenda superficialmente o seu funcionamento; é bastante simples de ler e nem é tão grande assim. Shells alternativas podem ser legais, mas  Bash é a mais poderosa e sempre está disponível (aprender  *somente* zsh, fish, etc,  é tentador quando você usa o seu próprio notebook, mas restringe você em muitas situações, por exemplo quando você quer  usar servidores de outros).
+- Aprenda o básico sobre Bash. Na verdade, digite `man bash` e pelo menos entenda superficialmente o seu funcionamento; é bastante simples de ler e nem é tão grande assim. Shells alternativas podem ser legais, mas Bash é a mais poderosa e sempre está disponível (aprender *somente* zsh, fish, etc, é tentador quando você usa o seu próprio notebook, mas restringe você em muitas situações, por exemplo quando você quer  usar servidores de outros).
 
-- Aprenda bem pelo menos um editor de text tradicional. Idealmente o Vim (`vi`), já que nenhum outro funciona tão bem nos   terminais aleatórios que a gente encontra por ai (mesmo que  você prefira usar o Emacs, um  IDE, ou um  editor hipster  a maior parte  do tempo).
+- Aprenda bem pelo menos um editor de texto tradicional. Idealmente o Vim (`vi`), já que nenhum outro funciona tão bem nos   terminais aleatórios que a gente encontra por aí (mesmo que você prefira usar o Emacs, um IDE, ou um editor hipster a maior parte  do tempo).
 
-- Saiba como ler a documentação com o `man` (para os  curiosos, `man man` lista os números das seções, por exemplo, 1 se refere aos comandos "regulares", 5 é sobre arquivos/convenções, e 8  diz respeito a administração). Procure outros documentos do manual com o `apropos`. Saiba que alguns dos comandos não são executáveis, mas sim built-ins(embutidos) no bash, pra esses você poderá conseguir ajuda com `help` e `help -d`.
+- Saiba como ler a documentação com o `man` (para os curiosos, `man man` lista os números das seções, por exemplo, 1 se refere aos comandos "regulares", 5 é sobre arquivos/convenções, e 8 diz respeito a administração). Procure outros documentos do manual com o `apropos`. Saiba que alguns dos comandos não são executáveis, mas sim built-ins (embutidos) no bash, pra esses você poderá conseguir ajuda com `help` e `help -d`.
 
 - Aprenda como fazer redirecionamento de saída e entrada usando `>` e `<` e pipes usando `|`. Aprenda sobre o stdout e stdin.
 
@@ -54,13 +54,13 @@ Notas:
 
 - Aprenda `ssh`, e o básico de autenticação sem senha, através do `ssh-agent`, `ssh-add`, etc.
 
-- Gerenciamento básico de arquivos: `ls` e `ls -l` (em particular, aprenda o que cada coluna  no `ls -l` significa), `less`, `head`, `tail` e `tail -f` (ou  melhor ainda, `less +F`), `ln` e `ln -s`(aprenda as diferenças e vantagens de soft links comparados a hard links), `chown`, `chmod`, `du` (para um rápido resumo do uso do disco: `du -sk *`). Para gerenciamento do sistema de arquivos, `df`, `mount`, `fdisk`, `mkfs`, `lsblk`.
+- Gerenciamento básico de arquivos: `ls` e `ls -l` (em particular, aprenda o que cada coluna no `ls -l` significa), `less`, `head`, `tail` e `tail -f` (ou melhor ainda, `less +F`), `ln` e `ln -s`(aprenda as diferenças e vantagens de soft links comparados a hard links), `chown`, `chmod`, `du` (para um rápido resumo do uso do disco: `du -sk *`). Para gerenciamento do sistema de arquivos, `df`, `mount`, `fdisk`, `mkfs`, `lsblk`.
 
 - Gerenciamento básico da rede: `ip` ou `ifconfig`, `dig`.
 
 - Saiba bem como usar expressões regulares, e as várias flags para `grep`/`egrep`. As `-i`, `-o`, `-A`, e `-B` são opções que é importante conhecer.
 
-- Aprenda a usar `apt-get`, `yum`, `dnf` ou `pacman` (dependendo da distribuição) para procurar e instalar pacotes. E garanta que você possui o `pip` para instalar ferramentas baseadas em Python (algumas das abaixo são  mais fáceis de instalar através do `pip`).
+- Aprenda a usar `apt-get`, `yum`, `dnf` ou `pacman` (dependendo da distribuição) para procurar e instalar pacotes. E garanta que você possui o `pip` para instalar ferramentas baseadas em Python (algumas das abaixo são mais fáceis de instalar através do `pip`).
 
 
 ## Uso diário
@@ -69,11 +69,11 @@ Notas:
 
 - Em Bash, utilize **ctrl-w** para deletar a última palavra, e **ctrl-u** para deletar tudo e voltar para o início da linha. Use **alt-b** e **alt-f** para se mover por palavras, **ctrl-k** para apagar até o final da linha, **ctrl-l** para limpar a tela. Consulte `man readline` para todos os keybindings padrões do Bash. Existem muitos. Por exemplo **alt-.** circula através dos argumentos anteriores, e **alt-*** expande um glob.
 
-- Alternativamente, se você adora os keybinds  do vi, use `set -o vi`.
+- Alternativamente, se você adora os keybinds do vi, use `set -o vi`.
 
 - Para ver os comandos recentes, `history`. Existem também muitas abreviações como `!$` (último argumento) e `!!` último comando, embora estes sejam muitas vezes facilmente substituídos por **ctrl-r** e **alt-.**.
 
-- Pra voltar  para o diretório anterior de trabalho: `cd -`.
+- Pra voltar para o diretório anterior de trabalho: `cd -`.
 
 - Se você está na metade do caminho ao digitar um comando, mas mudou de ideia, tecle **alt-#** para adicionar um `#` ao início da linha e definir esta como um comentário (ou use **ctrl-a**. **#**. **enter**). Mais tarde você poderá recuperar o comando através da `history`.
 
@@ -228,15 +228,15 @@ Use `zsless`, `zmore`, `zcat`, and `zgrep` para manipular arquivos comprimidos.
 
 - Debugar um sistema java é uma outra historia, mas um simples truque nas máquinas virtuais Oracle ou algum outro tipo de JVM é que você pode executar `kill -3 <pid>` e um completo rastreamento da pilha(stack trace) e resumo do heap (incluindo detalhes geracionais do garbage collector, os quais podem ser altamente informativos) serão vazados para stderr/logs.
 
-- Use `mtr` como uma melhor alternativa ao traceroute, para identificar problemas na rede.
+- Use [`mtr`](http://www.bitwizard.nl/mtr/) como uma melhor alternativa ao traceroute, para identificar problemas na rede.
 
-- Para verificar o porque de um disco estar cheio, `ncdu` economiza bastante tempo em comparação aos comandos usuais como `du -sh *`.
+- Para verificar o porque de um disco estar cheio, [`ncdu`](https://dev.yorhel.nl/ncdu) economiza bastante tempo em comparação aos comandos usuais como `du -sh *`.
 
-- Para procurar qual socket ou processo está utilizando a banda de rede, tente `iftop` ou `nethogs`.
+- Para procurar qual socket ou processo está utilizando a banda de rede, tente [`iftop`](http://www.ex-parrot.com/~pdw/iftop/) ou [`nethogs`](https://github.com/raboof/nethogs).
 
 - A ferramenta `ab` (que vem com o Apache) é muito útil para verificação rápida da performance do servidor web. Para mais complexos testes de carga, tente `siege`.
 
-- Para debugs mais sérios da rede, `wireshark`, `tshark`, ou `ngrep`.
+- Para debugs mais sérios da rede, [`wireshark`](https://wireshark.org/), [`tshark`](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html), ou [`ngrep`](http://ngrep.sourceforge.net/).
 
 - Aprenda a respeito do `strace`e `ltrace`. Estes podem ser úteis se um programa está falhando, travado, ou quebrando, e você não sabe o por que, ou se você quer obter uma ideia geral da performance. Note que a opção de perfil (`-c`), e a habilidade de se plugar a um processo em execução (`-p`).
 
@@ -246,7 +246,7 @@ Use `zsless`, `zmore`, `zcat`, and `zgrep` para manipular arquivos comprimidos.
 
 - Utilize `/proc`. Este é incrivelmente útil em algumas vezes quando se deseja debugar problemas ao vivo. Exemplos: `/proc/cpuinfo`, `/proc/xxx/cwd`, `/proc/xxx/exe`, `/proc/xxx/fd/`, `/proc/xxx/smaps`.
 
-- Quando estiver debugando o porque de algo ter dado errado no passado, `sar` pode ser de muita utilidade. Ele exibe as estatísticas históricas da CPU, memória, rede e etc.
+- Quando estiver debugando o porque de algo ter dado errado no passado, [`sar`](http://sebastien.godard.pagesperso-orange.fr/) pode ser de muita utilidade. Ele exibe as estatísticas históricas da CPU, memória, rede e etc.
 
 - Para análises de performance mais profundas do sistema, dê uma olhada em `stap` ([SystemTap](https://sourceware.org/systemtap/wiki)), [`perf`](http://en.wikipedia.org/wiki/Perf_(Linux)), e [`sysdig`](https://github.com/draios/sysdig).
 
@@ -386,15 +386,15 @@ Alguns exemplos de como reunir os comandos.
 
 - `strace`: Debug para chamadas de sistema.
 
-- `mtr`: melhor traceroute para debugar a rede.
+- [`mtr`](http://www.bitwizard.nl/mtr/): melhor traceroute para debugar a rede.
 
 - `cssh`: Visualização concorrente da shell.
 
 - `rsync`: Sincroniza arquivos e pastas através do SSH.
 
-- `wireshark` e `tshark`: captura de pacotes e debug de rede.
+- [`wireshark`](https://wireshark.org/) e [`tshark`](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html): captura de pacotes e debug de rede.
 
-- `ngrep`: grep para a camada de rede.
+- [`ngrep`](http://ngrep.sourceforge.net/): grep para a camada de rede.
 
 - `host` e `dig`: Consultas DNS.
 
@@ -414,17 +414,15 @@ Alguns exemplos de como reunir os comandos.
 
 - `id`: Informações sobre a identidade do user/group.
 
-- `sar`: histórico dos estados do sistema.
+- [`sar`](http://sebastien.godard.pagesperso-orange.fr/): histórico dos estados do sistema.
 
-- `iftop` ou `nethogs`: Utilização da rede por sockets ou processos.
+- [`iftop`](http://www.ex-parrot.com/~pdw/iftop/) ou [`nethogs`](https://github.com/raboof/nethogs): Utilização da rede por sockets ou processos.
 
 - `ss`: Estatísticas dos sockets.
 
 - `dmesg`: Mensagens de erro do sistema e do boot.
 
 - `hdparm`: Manipulação/performance de discos SATA/ATA.
-
-- `lsb_release`: Informações sobre a distribuição do Linux.
 
 - `lsblk`: Lista os blocos dos dispositivos: uma visualização em forma de árvore dos seus discos e partições do disco.
 
